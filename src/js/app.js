@@ -10,12 +10,10 @@ export default class ErrorRepository {
     }
 
     translate(code) {
-        let text = null;
         if (this.repository.has(code)) {
-            text = this.repository.get(code);
+            return this.repository.get(code);
         } else {
-            text = 'Unknown error!';
+            return 'Unknown error!';
         }
-        return text;
     }
 }
