@@ -2,7 +2,11 @@
 
 export default class ErrorRepository {
     constructor() {
-        this.repository = new Map();
+        this.repository = new Map([
+            [405, 'Method Not Allowed'],
+            [404, 'Not Found'],
+            [502, 'Bad Gateway']
+        ]);
     }
 
     add(code, errMessage) {
